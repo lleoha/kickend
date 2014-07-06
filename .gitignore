@@ -8,7 +8,9 @@
 /configure
 /depcomp
 /install-sh
-/kickend-0.1.tar.gz
+/kickend-*.tar.gz
 /missing
+/autoscan.log
+/configure.scan
 
 *.o

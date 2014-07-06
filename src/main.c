@@ -1,17 +1,17 @@
-int x = 7;
-int y;
-static int z=9;
+#include <stdint.h>
+#include <stdio.h>
+#include "amiga.h"
+
 
 int main() {
-    short *a = (void *) 0xdff000 + 0x096;
-    short *b = (void *) 0xdff000 + 0x100;
-    short *c = (void *) 0xdff000 + 0x110;
-    short *d = (void *) 0xdff000 + 0x180;
+    /* disable DMA */
+    DMACON  = 0x7fff;
 
-    *a = 0x7fff;
-    *b = 0x0200;
-    *c = 0x0000;
-    *d = 0x0888;
+    /* set backgroud color to red */
+    BPLCON0 = 0x0200;
+    BPL1DAT = 0x0000;
+    COLOR00 = 0x0f00;
 
+    printf("Hello\r\n");
     return 0;
 }
